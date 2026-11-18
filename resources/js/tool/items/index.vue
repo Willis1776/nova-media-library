@@ -4,7 +4,7 @@
 
     <template v-if="'folders' === this.$parent.config.store">
       <template v-if="'/' !== folder">
-        <div class="pl-3 text-white rounded p-1 mx-1 mb-4 w-full break-words bg-green-600 text-white font-bold" style="font-family:monospace">{{ folder }}</div>
+        <div class="mx-1 mb-4 w-full break-words rounded bg-gray-100 dark:bg-gray-800 px-3 py-1 font-bold text-gray-700 dark:text-gray-200" style="font-family:monospace">{{ folder }}</div>
         <Folders :key="folder" type="back" />
         <Folders :key="folder" v-if="!$parent.items.array.length && !getFolders.length" type="remove" />
       </template>

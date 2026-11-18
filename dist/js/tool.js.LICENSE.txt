@@ -21,12 +21,6 @@
  * Licensed MIT © Zeno Rocha
  */
 
-/*!
- * vuex v4.0.2
- * (c) 2021 Evan You
- * @license MIT
- */
-
 /*! Hammer.JS - v2.0.7 - 2016-04-22
  * http://hammerjs.github.io/
  *

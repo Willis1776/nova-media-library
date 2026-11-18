@@ -7,7 +7,7 @@ export default {
   components: { Folders },
   data() {
     return {
-      checked: 'border border-red-300 rounded-md',
+      checked: 'checked',
       
     }
   },

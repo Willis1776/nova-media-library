@@ -1,23 +1,54 @@
 @import "~cropperjs/dist/cropper.min.css"
 
+@tailwind utilities
+
 
 #nml-tool
   .flatpickr-input
     width: 120px
   .loader > div > div
     height: 100vh
-  .popup .bg-white
-    position: relative
-    width: 600px
   #nml_cropper
-    .bg-white
-      max-width: 1000px
     .cropper-point
       background: #fff
     .cropper-view-box
       outline: 1px dashed #fff
     .cropper-line
       display: none
+
+
+.nml-btn
+  align-items: center
+  border-radius: .375rem
+  box-shadow: 0 1px 2px 0 rgba(#000, .05)
+  cursor: pointer
+  display: inline-flex
+  font-size: .875rem
+  font-weight: 700
+  justify-content: center
+  line-height: 1.25rem
+  padding: .375rem .75rem
+  transition: background-color .15s
+  &-primary
+    background-color: rgb(var(--colors-primary-500))
+    color: #fff
+    &:hover
+      background-color: rgb(var(--colors-primary-400))
+  &-danger
+    background-color: rgb(var(--colors-red-500))
+    color: #fff
+    &:hover
+      background-color: rgb(var(--colors-red-400))
+  &-secondary
+    background-color: rgb(var(--colors-gray-100))
+    color: rgb(var(--colors-gray-700))
+    &:hover
+      background-color: rgb(var(--colors-gray-200))
+.dark .nml-btn-secondary
+  background-color: rgb(var(--colors-gray-700))
+  color: rgb(var(--colors-gray-200))
+  &:hover
+    background-color: rgb(var(--colors-gray-600))
 
 
 .nml-close
@@ -46,7 +77,7 @@
       padding-right: 4px
       width: 158px
       &.checked .icon
-        box-shadow: 0 0 0 3px var(--primary-70)
+        box-shadow: 0 0 0 3px rgb(var(--colors-primary-500))
     .icon
       background-size: 36px 36px
       box-shadow: 0 4px 8px 0 rgba(#000, .12), 0 2px 4px 0 rgba(#000, .08)
@@ -65,6 +96,8 @@
     [class*="nml-icon-folder"] + .title
       background: transparent
       color: #434d5d
+      .dark &
+        color: rgb(var(--colors-gray-300))
 
   &-list
     .nml-item
@@ -76,14 +109,14 @@
       height: 40px
       width: 100%
       &.checked
-        box-shadow: 0 0 0 3px var(--primary-70)
+        box-shadow: 0 0 0 3px rgb(var(--colors-primary-500))
     .icon
       background-size: 24px 24px
       box-shadow: 1px 0 4px 0 rgba(#333, .05)
       height: 40px
       width: 50px
     .title
-      color: var(--black)
+      color: rgb(var(--colors-gray-900))
       line-height: 40px
       margin-left: 10px
       max-width: calc(100% - 70px)
@@ -172,6 +205,12 @@
 body.overflow-hidden #nova
   &, #nml-tool .popup
     overflow-y: scroll
+
+.dark .nml-display-list
+  .nml-item
+    background: rgb(var(--colors-gray-800))
+  .title
+    color: rgb(var(--colors-gray-100))
 
 @media (max-width: 1024px)
   #nml-tool
